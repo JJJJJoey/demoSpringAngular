@@ -20,12 +20,12 @@ public class User extends BaseModel{
     @NotNull
     @Email
     private String email;
-
-    @Column(length = 20, nullable = false)
-    @NotNull
-    private String firstname;
-
-    @Column(length = 30, nullable = false)
-    @NotNull
-    private String lastname;
+//
+//    @Column(length = 20, nullable = false)
+//    @NotNull
+//    private String firstname;
+//
+//    @Column(length = 30, nullable = false)
+//    @NotNull
+//    private String lastname;
 }

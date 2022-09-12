@@ -25,13 +25,15 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:oracle:thin:@//localhost:1521/XEPDB1
   jpa:
+    show-sql: true
+    database: ORACLE
     generate-ddl: true
     hibernate:
       ddl-auto: create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       use-new-id-generator-mappings: true
-      show-sql: true
+
 #    open-in-view: false
 #    properties:
 #      hibernate:
