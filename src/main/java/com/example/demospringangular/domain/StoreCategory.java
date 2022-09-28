@@ -20,5 +20,5 @@ import javax.validation.constraints.NotNull;
 public class StoreCategory extends BaseModel {
     @Column(length = 50, nullable = false)
     @NotNull
-    private String description;
+    private String name;
 }
