@@ -38,19 +38,23 @@ public class BasicSampleUserGenerator extends BaseComponent implements CommandLi
 
 
         //Generating StoreCategories
-        List<StoreCategory> storeCategories = List.of(
-                StoreCategory.builder().name("SOUVLAKIA").build(),
-                StoreCategory.builder().name("BURGERS").build(),
-                StoreCategory.builder().name("PIZZA").build()
-        );
+//        List<StoreCategory> storeCategories = List.of(
+//                StoreCategory.builder().name("SOUVLAKIA").build(),
+//                StoreCategory.builder().name("BURGERS").build(),
+//                StoreCategory.builder().name("PIZZA").build()
+//        );
+//
+//        List<StoreCategory> persistedStoreCategories = storeCategoryService.createAll(storeCategories);
 
-        List<StoreCategory> persistedStoreCategories = storeCategoryService.createAll(storeCategories);
+        StoreCategory categorySoulvakia = storeCategoryService.create(StoreCategory.builder().name("Souvlakia").build());
+        StoreCategory categoryBurgers = storeCategoryService.create(StoreCategory.builder().name("Burgers").build());
+        StoreCategory categoryPizza = storeCategoryService.create(StoreCategory.builder().name("Pizza").build());
 
         //Generating Stores
         List<Store> stores = List.of(
-                Store.builder().name("SOUVLAKIA").address("lalal").build(),
-                Store.builder().name("BURGERS").address("lololol").build(),
-                Store.builder().name("PIZZA").address("kokoko").build()
+                Store.builder().name("SOUVLAKIAria").address("lalal").storeCategory(categorySoulvakia).build(),
+                Store.builder().name("BURGERSria").address("lololol").storeCategory(categoryBurgers).build(),
+                Store.builder().name("PIZZAria").address("kokoko").storeCategory(categoryPizza).build()
         );
 
         List<Store> persistedStores = storeService.createAll(stores);

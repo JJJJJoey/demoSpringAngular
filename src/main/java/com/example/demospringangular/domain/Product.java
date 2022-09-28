@@ -19,10 +19,12 @@ public class Product extends BaseModel {
 
     @NotNull
     private String name;
+
     @Column(precision = 10, scale = 2, nullable = false)
     @NotNull
     private BigDecimal price;
+
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @NotNull
-    private StoreCategory category;
+    private Store store;
 }

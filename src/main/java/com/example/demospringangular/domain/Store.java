@@ -1,11 +1,9 @@
 package com.example.demospringangular.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Getter
@@ -15,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "STORES")
+@Table(name = "STORES", indexes = {@Index(name = "STORE_IDX_01", columnList = "name")})
 @SequenceGenerator(name = "idGenerator", sequenceName = "STORES_SEQ", initialValue = 1, allocationSize = 1)
 
 public class Store extends BaseModel{
@@ -25,4 +23,10 @@ public class Store extends BaseModel{
     @Column(length = 50, nullable = false)
     @NotNull
     private String address;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @NotNull
+    private StoreCategory storeCategory;
+
+
 }
