@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService{
@@ -20,4 +22,11 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+
+    @Override
+    public User findByFirstName(String name) {
+        return userRepository.findByFirstname(name);
+    }
+
+
 }
