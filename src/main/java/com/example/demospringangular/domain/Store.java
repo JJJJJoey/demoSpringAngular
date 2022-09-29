@@ -26,6 +26,7 @@ public class Store extends BaseModel{
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @NotNull
+    @JsonIgnore
     private StoreCategory storeCategory;
 
 
